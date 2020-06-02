@@ -1,6 +1,20 @@
 #!/bin/bash
 
-get_markers="$HOME/Desktop/git/lib-teeworlds/demo.sh --markers "
+demo_script="$HOME/Desktop/git/lib-teeworlds/demo.sh"
+if [ ! -f "$demo_script" ]
+then
+    demo_script=./demo.sh
+    if [ ! -f "$demo_script" ]
+    then
+        echo "[*] downloading demo header parser ..."
+        wget \
+            -O \
+            demo.sh \
+            https://raw.githubusercontent.com/lib-crash/lib-teeworlds/master/demo.sh
+        chmod +x ./demo.sh
+    fi
+fi
+get_markers="$demo_script --markers "
 demo_dir="${1:-./auto-zilly}"
 demo_dir="${demo_dir%/}"
 
