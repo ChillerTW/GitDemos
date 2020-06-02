@@ -1,0 +1,10 @@
+tmp/
+replays/
+auto/
+auto-zilly/
+*.demo
+*.txt
+tags
+TwDemosMain/
+TwDemosMisc/
+
